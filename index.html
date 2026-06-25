@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Awareness & Password Strength Checker</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+color:#333;
+line-height:1.7;
+}
+
+header{
+background:#0a3d62;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+nav{
+background:#145da0;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-weight:bold;
+}
+
+section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#0a3d62;
+margin-bottom:10px;
+}
+
+h3{
+margin-top:15px;
+color:#145da0;
+}
+
+ul{
+padding-left:20px;
+}
+
+.password-box input{
+width:100%;
+padding:12px;
+margin-top:10px;
+}
+
+#strength{
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
+}
+
+button{
+padding:10px 20px;
+background:#0a3d62;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#145da0;
+}
+
+footer{
+background:#0a3d62;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Phishing Awareness Website</h1>
+<p>Learn to Identify and Prevent Phishing Attacks</p>
+</header>
+
+<nav>
+<a href="#intro">Introduction</a>
+<a href="#types">Types</a>
+<a href="#signs">Signs</a>
+<a href="#prevention">Prevention</a>
+<a href="#checker">Password Checker</a>
+<a href="#quiz">Quiz</a>
+</nav>
+
+<section id="intro">
+
+<h2>What is Phishing?</h2>
+
+<p>
+Phishing is a cyber attack where attackers trick users into revealing
+sensitive information such as passwords, OTPs, bank details and personal data.
+Attackers often use fake emails, websites and messages that look legitimate.
+</p>
+
+<br>
+
+<h2>How Phishing Works</h2>
+
+<ol>
+<li>Attacker creates a fake email or website.</li>
+<li>User receives the message.</li>
+<li>User clicks a malicious link.</li>
+<li>Fake website opens.</li>
+<li>User enters sensitive information.</li>
+<li>Attacker steals the information.</li>
+</ol>
+
+</section>
+<section id="types">
+
+<h2>Types of Phishing</h2>
+
+<h3>1. Email Phishing</h3>
+<p>
+The most common phishing attack. Attackers send fake emails pretending
+to be trusted companies, banks, or services.
+</p>
+
+<p><b>Example:</b> "Your account has been suspended. Verify now."</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Password theft</li>
+<li>Identity theft</li>
+<li>Financial loss</li>
+</ul>
+
+<hr><br>
+
+<h3>2. Spear Phishing</h3>
+<p>
+A targeted phishing attack aimed at a specific person or organization.
+Attackers gather personal information before sending the message.
+</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Data breaches</li>
+<li>Company information leaks</li>
+</ul>
+
+<hr><br>
+
+<h3>3. Whaling</h3>
+<p>
+A phishing attack that targets high-level executives such as CEOs and managers.
+</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Large financial losses</li>
+<li>Business disruption</li>
+</ul>
+
+<hr><br>
+
+<h3>4. Smishing</h3>
+<p>
+Phishing through SMS messages.
+</p>
+
+<p><b>Example:</b> "Your package is delayed. Track now."</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Mobile malware</li>
+<li>Account compromise</li>
+</ul>
+
+<hr><br>
+
+<h3>5. Vishing</h3>
+<p>
+Voice phishing through phone calls.
+</p>
+
+<p><b>Example:</b> Fake bank officer requesting OTP.</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Banking fraud</li>
+<li>OTP theft</li>
+</ul>
+
+<hr><br>
+
+<h3>6. Clone Phishing</h3>
+<p>
+Attackers copy legitimate emails and replace original links with malicious links.
+</p>
+
+<p><b>Effects:</b></p>
+<ul>
+<li>Credential theft</li>
+<li>Malware infection</li>
+</ul>
+
+</section>
+
+<section id="signs">
+
+<h2>Signs of a Phishing Attack</h2>
+
+<ul>
+<li>Unknown sender email address</li>
+<li>Urgent action requests</li>
+<li>Spelling and grammar mistakes</li>
+<li>Suspicious website links</li>
+<li>Unexpected attachments</li>
+<li>Requests for passwords or OTPs</li>
+<li>Too-good-to-be-true offers</li>
+<li>Threatening messages</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>How to Identify Fake Websites</h2>
+
+<h3>Check the URL Carefully</h3>
+
+<p>
+<b>Real:</b> https://www.amazon.in
+</p>
+
+<p>
+<b>Fake:</b> https://amazon-login-security.xyz
+</p>
+
+<h3>Look for HTTPS</h3>
+
+<p>
+Secure websites usually use HTTPS and display a lock icon.
+</p>
+
+<h3>Check Website Design</h3>
+
+<p>
+Poor-quality images, broken links, and bad formatting can indicate a fake website.
+</p>
+
+<h3>Verify Domain Name</h3>
+
+<p>
+Always check spelling carefully.
+</p>
+
+<p>
+Real: facebook.com
+</p>
+
+<p>
+Fake: faceboook.com
+</p>
+
+</section>
+<section>
+
+<h2>Effects of Phishing</h2>
+
+<h3>1. Financial Loss</h3>
+<p>
+Attackers can steal banking information and transfer money from victim accounts.
+</p>
+
+<h3>2. Identity Theft</h3>
+<p>
+Personal information can be used to impersonate the victim.
+</p>
+
+<h3>3. Data Breach</h3>
+<p>
+Sensitive company or personal information may be exposed.
+</p>
+
+<h3>4. Malware Infection</h3>
+<p>
+Victims may unknowingly install malware, ransomware, or spyware.
+</p>
+
+<h3>5. Reputation Damage</h3>
+<p>
+Organizations can lose customer trust after phishing incidents.
+</p>
+
+</section>
+
+<section id="prevention">
+
+<h2>Prevention Methods</h2>
+
+<ul>
+<li>Use strong and unique passwords.</li>
+<li>Enable Two-Factor Authentication (2FA).</li>
+<li>Verify sender identity before responding.</li>
+<li>Never share OTPs or passwords.</li>
+<li>Avoid clicking suspicious links.</li>
+<li>Keep software and browsers updated.</li>
+<li>Use trusted antivirus software.</li>
+<li>Check URLs before entering credentials.</li>
+<li>Report suspicious emails.</li>
+<li>Stay informed about cyber threats.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>Real World Phishing Examples</h2>
+
+<h3>Google Docs Phishing Attack (2017)</h3>
+
+<p>
+Millions of Gmail users received fake Google Docs invitations.
+Users unknowingly granted attackers access to their accounts.
+</p>
+
+<h3>Impact</h3>
+
+<ul>
+<li>Thousands of accounts affected</li>
+<li>User data exposed</li>
+<li>Global awareness increased</li>
+</ul>
+
+<br>
+
+<h3>Facebook and Google Scam</h3>
+
+<p>
+Attackers sent fake invoices and payment requests,
+causing companies to lose millions of dollars.
+</p>
+
+<h3>Impact</h3>
+
+<ul>
+<li>Huge financial losses</li>
+<li>Business disruption</li>
+</ul>
+
+</section>
+
+<section id="checker">
+
+<h2>Password Strength Checker</h2>
+
+<p>
+A Password Strength Checker helps users create strong passwords by checking:
+</p>
+
+<ul>
+<li>Password Length</li>
+<li>Uppercase Letters</li>
+<li>Lowercase Letters</li>
+<li>Numbers</li>
+<li>Special Characters</li>
+</ul>
+
+<br>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password"
+onkeyup="checkPassword()">
+
+<h3 id="strength"></h3>
+
+<ul>
+<li id="length">❌ At least 8 characters</li>
+<li id="upper">❌ Uppercase Letter</li>
+<li id="lower">❌ Lowercase Letter</li>
+<li id="number">❌ Number</li>
+<li id="special">❌ Special Character</li>
+</ul>
+
+</section>
+<section id="quiz">
+
+<h2>Phishing Awareness Quiz</h2>
+
+<p><b>1. What is Phishing?</b></p>
+
+<input type="radio" name="q1" value="a"> Antivirus Software<br>
+<input type="radio" name="q1" value="b"> Cyber Attack to Steal Information<br>
+<input type="radio" name="q1" value="c"> Programming Language<br><br>
+
+<p><b>2. Which information should never be shared?</b></p>
+
+<input type="radio" name="q2" value="a"> Name<br>
+<input type="radio" name="q2" value="b"> OTP<br>
+<input type="radio" name="q2" value="c"> City<br><br>
+
+<p><b>3. Which is a sign of phishing?</b></p>
+
+<input type="radio" name="q3" value="a"> Suspicious Link<br>
+<input type="radio" name="q3" value="b"> Strong Password<br>
+<input type="radio" name="q3" value="c"> Software Update<br><br>
+
+<button onclick="checkQuiz()">Submit Quiz</button>
+
+<h3 id="quizResult"></h3>
+
+</section>
+
+<section>
+
+<h2>Conclusion</h2>
+
+<p>
+Phishing is one of the most common cyber threats in today's digital world.
+Cybercriminals use fake emails, websites, messages and phone calls to trick users
+into revealing sensitive information.
+</p>
+
+<p>
+By understanding phishing techniques, recognizing warning signs,
+using strong passwords, enabling Two-Factor Authentication and staying alert online,
+users can protect themselves from cyber attacks.
+</p>
+
+<p>
+Cybersecurity awareness is the first step toward a safer internet experience.
+</p>
+
+</section>
+
+<footer>
+
+<p>
+Phishing Awareness & Password Strength Checker Project
+</p>
+
+<p>
+Created for Cyber Security Education
+</p>
+
+</footer>
+
+<script>
+
+function checkPassword(){
+
+let password =
+document.getElementById("password").value;
+
+let score = 0;
+
+if(password.length >= 8){
+score++;
+document.getElementById("length").innerHTML =
+"✅ At least 8 characters";
+}
+else{
+document.getElementById("length").innerHTML =
+"❌ At least 8 characters";
+}
+
+if(/[A-Z]/.test(password)){
+score++;
+document.getElementById("upper").innerHTML =
+"✅ Uppercase Letter";
+}
+else{
+document.getElementById("upper").innerHTML =
+"❌ Uppercase Letter";
+}
+
+if(/[a-z]/.test(password)){
+score++;
+document.getElementById("lower").innerHTML =
+"✅ Lowercase Letter";
+}
+else{
+document.getElementById("lower").innerHTML =
+"❌ Lowercase Letter";
+}
+
+if(/[0-9]/.test(password)){
+score++;
+document.getElementById("number").innerHTML =
+"✅ Number";
+}
+else{
+document.getElementById("number").innerHTML =
+"❌ Number";
+}
+
+if(/[!@#$%^&*(),.?":{}|<>]/.test(password)){
+score++;
+document.getElementById("special").innerHTML =
+"✅ Special Character";
+}
+else{
+document.getElementById("special").innerHTML =
+"❌ Special Character";
+}
+
+let strength =
+document.getElementById("strength");
+
+if(score <= 2){
+strength.innerHTML = "Weak Password";
+strength.style.color = "red";
+}
+else if(score <= 4){
+strength.innerHTML = "Medium Password";
+strength.style.color = "orange";
+}
+else{
+strength.innerHTML = "Strong Password";
+strength.style.color = "green";
+}
+}
+
+function checkQuiz(){
+
+let score = 0;
+
+let q1 =
+document.querySelector('input[name="q1"]:checked');
+
+let q2 =
+document.querySelector('input[name="q2"]:checked');
+
+let q3 =
+document.querySelector('input[name="q3"]:checked');
+
+if(q1 && q1.value === "b"){
+score++;
+}
+
+if(q2 && q2.value === "b"){
+score++;
+}
+
+if(q3 && q3.value === "a"){
+score++;
+}
+
+document.getElementById("quizResult").innerHTML =
+"Your Score: " + score + " / 3";
+}
+
+</script>
+
+</body>
+</html>
+  
